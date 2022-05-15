@@ -15,16 +15,16 @@ class orbitor:
         self.anchor = anchor
         #object of Anchor class
 
-    def getGravPara(self):
+    def getGravParamOrbit(self):
         gc = .00000000006674
-        gp = gc * self.anchor.mass
+        gp = gc * (self.anchor.mass + self.mass)
         
         return gp
 
 
     def getVel(self):
                 
-        semi = self.getGravPara()/self.dist
+        semi = self.getGravParamOrbit()/self.dist
         velocity = sqrt(semi)
 
         return velocity
@@ -37,7 +37,7 @@ class orbitor:
     def getOrbPeriod(self):
         fullRev = 2 * pi
         rCubed = self.dist ** 3
-        op = fullRev * sqrt(rCubed/self.getGravPara())
+        op = fullRev * sqrt(rCubed/self.getGravParamOrbit())
 
         return op
 
