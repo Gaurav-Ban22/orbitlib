@@ -1,4 +1,5 @@
 from cmath import *
+import Anchor
 
 
 class orbitor:
@@ -16,7 +17,7 @@ class orbitor:
 
     def getGravPara(self):
         gc = .00000000006674
-        gp = gc * self.mass
+        gp = gc * self.anchor.mass
         
         return gp
 
@@ -48,7 +49,7 @@ class orbitor:
     def getAngVel(self):
         final = self.getVel() / self.dist
         #in radians
-        
+
         return final
 
 
