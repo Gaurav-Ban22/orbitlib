@@ -1,12 +1,12 @@
 from cmath import *
-import Anchor
+import Anchor as a
 import os
 
 
 class orbitor:
 
     def __init__(self, mass, dist, anchor):
-        if not type(anchor) == Anchor:
+        if not type(anchor) == a.Anch:
             raise ValueError("Parameter 'anchor' in orbitor must be of type Anchor.")
 
         self.mass = mass
