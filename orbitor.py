@@ -30,15 +30,15 @@ class orbitor:
 
         return velocity
 
+    # assume satellite is sphere
     def getAngMom(self):
-        am = self.mass * self.dist * self.getVel()
+        am = 0.667 * self.mass * self.dist * self.dist * self.getAngVel()
 
         return am
 
     def getOrbPeriod(self):
-        fullRev = 2 * pi
-        rCubed = self.dist ** 3
-        op = fullRev * sqrt(rCubed/self.getGravParamOrbit())
+        full = 2 * pi * self.dist
+        op = full/self.getVel()
 
         return op
 
@@ -59,7 +59,7 @@ class orbitor:
             command = "cls"
         os.system(command)
 
-    
+    #def printInfo(self):
 
 
 
