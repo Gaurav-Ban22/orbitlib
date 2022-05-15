@@ -1,5 +1,6 @@
 from cmath import *
 import Anchor
+import os
 
 
 class orbitor:
@@ -51,6 +52,14 @@ class orbitor:
         #in radians
 
         return final
+
+    def __clearTerm(self):
+        command = "clear"
+        if os.name in ('nt','dos'):
+            command = "cls"
+        os.system(command)
+
+    
 
 
 
