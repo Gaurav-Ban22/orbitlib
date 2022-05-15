@@ -40,5 +40,21 @@ class orbitor:
 
         return op
 
+    def getLength(self):
+        round = 2 * pi * self.dist
+        
+        return round
+
+    def getAngVel(self):
+        final = self.getVel() / self.dist
+        #in radians
+        
+        return final
+
+
+
+
+
+
 
     
