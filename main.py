@@ -1,8 +1,9 @@
 import orbitor as o
 import Anchor as a
 
-anch = a.Anch(2500)
+anch = a.Anch(10000)
 
-sat = o.orbitor(1000, 1000, anch)
+sat = o.orbitor(5000, 1000, anch)
 
 print(str(sat.getVel()))
+print(str(sat.printTimeTaken()))
