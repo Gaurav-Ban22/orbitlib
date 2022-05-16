@@ -74,7 +74,7 @@ class orbitor:
             command = "cls"
         os.system(command)
 
-    def printTimeTaken(self):
+    def getTimeTaken(self):
         #can use orbital period but i feel that angular velocity is better
         #in units time
         tt = 2*pi
@@ -85,11 +85,24 @@ class orbitor:
 
         return ttd
 
+    def statPrint(self,time):
+        x = 1
+        full = 2*pi
+        if type(time) != type(x):
+            raise ValueError("Parameter 'time' of statPrint function needs to be of type integer.")
+        
+        radians = self.getAngVel() * time
+        if radians > full:
+            while radians > full:
+                radians -= full
+
+        smpl = round(radians/pi, 10)
+        
+
+        print("Radians simplified and rounded to 10 significant digits: " + str(round(radians,10)))
+        print("Radians rounded to 10 significant digits: " + str(smpl) + "*pi")
 
 
 
 
 
-
-
-    
