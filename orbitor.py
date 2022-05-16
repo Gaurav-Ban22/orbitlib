@@ -88,6 +88,7 @@ class orbitor:
     def statPrint(self,time):
         x = 1
         full = 2*pi
+        fullo = 360/full
         if type(time) != type(x):
             raise ValueError("Parameter 'time' of statPrint function needs to be of type integer.")
         
@@ -100,7 +101,10 @@ class orbitor:
         
 
         print("Radians simplified and rounded to 10 significant digits: " + str(round(radians,10)))
+        print("Degrees rounded to 10 significant digits: " + str(round(radians*fullo, 10)))
         print("Radians rounded to 10 significant digits: " + str(smpl) + "*pi")
+
+
 
 
 

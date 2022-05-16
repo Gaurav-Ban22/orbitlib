@@ -9,3 +9,4 @@ print(str(sat.getVel()))
 print(str(sat.getTimeTaken()))
 
 sat.statPrint(10000)
+sat.statPrint(10000000000)
