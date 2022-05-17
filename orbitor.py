@@ -31,6 +31,8 @@ class orbitor:
         velocity = round(velocity.real, 10)
         #getting real value because will always result in 0i being passed since complex number
 
+        #something wrong with velocity calculations
+
         return velocity
 
     # assume satellite is sphere
@@ -93,6 +95,7 @@ class orbitor:
             raise ValueError("Parameter 'time' of statPrint function needs to be of type integer.")
         
         radians = self.getAngVel() * time
+        print("Raw Radians, including full revolutions: " + str(round(radians, 10)))
         if radians > full:
             while radians > full:
                 radians -= full
