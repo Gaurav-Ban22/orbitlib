@@ -13,4 +13,5 @@ The simulation only provides numerical data through terminal but soon will accou
 
 Notes: All distances should be in meters, all masses should be in kilograms, and all time units should be in seconds.
 
+It is also tested and true; upon putting in the information about the Earth-Sun orbital system (which is so close to being circular that its orbit can be considered circular) all info given back was accurate (radian values deviated by 0.009.)
 
