@@ -18,15 +18,14 @@ class orbitor:
 
     def getGravParamOrbit(self):
         gc = .00000000006674
-        gp = gc * (self.anchor.mass + self.mass)
+        gp = gc * (self.anchor.mass)
         
         return gp
 
 
     def getVel(self):
                 
-        semi = self.getGravParamOrbit()/self.dist
-        velocity = sqrt(semi)
+        velocity = sqrt(self.getGravParamOrbit()/self.dist)
 
         velocity = round(velocity.real, 10)
         #getting real value because will always result in 0i being passed since complex number
