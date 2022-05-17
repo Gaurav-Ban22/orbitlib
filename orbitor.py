@@ -112,14 +112,18 @@ class orbitor:
 
         print("Total distance traveled in meters (rounded to 10 significant digits): " + str(round(dista,10)))
 
+        cir = pi * self.dist * self.dist
+        
+        print("Length of orbit rounded to 10 sigdigits: " + str(round(cir, 10)))
+
         orb = self.getOrbPeriod()
-        if dista > orb:
-            while dista > orb:
-                dista -= orb
+        if dista > cir:
+            while dista > cir:
+                dista -= cir
 
         print("Distance traveled in current orbital round (rounded to 10 significant digits): " + str(round(dista,10)))
 
-        #print("Amount of seconds needed to finish orbit (rounded to 10 significant digits): " + str(round(orb/self.getVel(), 10)))
+        print("Amount of seconds needed to finish orbit (rounded to 10 significant digits): " + str(self.getOrbPeriod()))
 
 
 
