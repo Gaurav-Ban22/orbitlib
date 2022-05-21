@@ -106,13 +106,12 @@ class orbitor:
         print("Percentage of orbit completed rounded to 1 significant digit: " + str(round(y,1)))
 
         print("Degrees rounded to 10 significant digits: " + str(round(radians*fullo, 10)))
-        print("Radians rounded to 10 significant digits: " + str(smpl) + "*pi")
 
-        dista = self.getVel() * self.dist
+        dista = self.getVel() * time
 
         print("Total distance traveled in meters (rounded to 10 significant digits): " + str(round(dista,10)))
 
-        cir = pi * self.dist * self.dist
+        cir = pi * (self.dist * 2)
         
         print("Length of orbit rounded to 10 sigdigits: " + str(round(cir, 10)))
 
@@ -120,8 +119,6 @@ class orbitor:
         if dista > cir:
             while dista > cir:
                 dista -= cir
-
-        print("Distance traveled in current orbital round (rounded to 10 significant digits): " + str(round(dista,10)))
 
         print("Amount of seconds needed to finish orbit (rounded to 10 significant digits): " + str(self.getOrbPeriod()))
 
