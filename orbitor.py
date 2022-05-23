@@ -1,4 +1,5 @@
 from cmath import *
+from inspect import FullArgSpec
 import Anchor as a
 import os
 
@@ -115,12 +116,62 @@ class orbitor:
         
         print("Length of orbit rounded to 10 sigdigits: " + str(round(cir, 10)))
 
-        orb = self.getOrbPeriod()
-        if dista > cir:
-            while dista > cir:
-                dista -= cir
 
-        print("Amount of seconds needed to finish orbit (rounded to 10 significant digits): " + str(self.getOrbPeriod()))
+    def getRadiansOrbit(self,time):
+
+        x = 1
+        full = 2*pi
+        if type(time) != type(x):
+            raise ValueError("Parameter 'time' of statPrint function needs to be of type integer.")
+        
+        radians = self.getAngVel() * time
+        if radians > full:
+            while radians > full:
+                radians -= full
+
+        smpl = round(radians, 10)
+        y = radians/2*pi
+
+        return smpl
+
+    def getFullRadians(self,time):
+
+        x = 1
+        full = 2*pi
+        if type(time) != type(x):
+            raise ValueError("Parameter 'time' of statPrint function needs to be of type integer.")
+        
+        radians = self.getAngVel() * time
+        return radians
+
+    def getPercentage(self,time):
+        y = self.getRadiansOrbit(time)/2*pi
+
+        return round(y,10)
+
+    def getDegrees(self,time):
+        full = 2*pi
+        fullo = 360/full
+
+        x = round(self.getRadiansOrbit(time)*fullo, 10)
+
+        return x
+
+    def getDistance(self,time):
+        dista = self.getVel() * time
+
+        return round(dista,10)
+
+    def orbitLen(self):
+        cir = pi * (self.dist * 2)
+        
+        return round(cir, 10)
+
+    
+
+    
+
+
 
 
 
