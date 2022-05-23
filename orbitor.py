@@ -87,34 +87,35 @@ class orbitor:
 
         return ttd
 
-    def statPrint(self,time):
-        x = 1
-        full = 2*pi
-        fullo = 360/full
-        if type(time) != type(x):
-            raise ValueError("Parameter 'time' of statPrint function needs to be of type integer.")
+    #def statPrint(self,time):
+     #   x = 1
+      #  full = 2*pi
+       # fullo = 360/full
+        #if type(time) != type(x):
+         #   raise ValueError("Parameter 'time' of statPrint function needs to be of type integer.")
         
-        radians = self.getAngVel() * time
-        print("Raw Radians, including full revolutions: " + str(round(radians, 10)))
-        if radians > full:
-            while radians > full:
-                radians -= full
+        #radians = self.getAngVel() * time
+        #print("Raw Radians, including full revolutions: " + str(round(radians, 10)))
+        #if radians > full:
+         #   while radians > full:
+          #      radians -= full
 
-        smpl = round(radians/pi, 10)
-        y = radians/2*pi
+        #smpl = round(radians/pi, 10)
+        #y = radians/2*pi
 
-        print("Radians simplified and rounded to 10 significant digits: " + str(round(radians,10)))
-        print("Percentage of orbit completed rounded to 1 significant digit: " + str(round(y,1)))
+        #print("Radians simplified and rounded to 10 significant digits: " + str(round(radians,10)))
+        #print("Percentage of orbit completed rounded to 1 significant digit: " + str(round(y,1)))
 
-        print("Degrees rounded to 10 significant digits: " + str(round(radians*fullo, 10)))
+        #print("Degrees rounded to 10 significant digits: " + str(round(radians*fullo, 10)))
 
-        dista = self.getVel() * time
+        #dista = self.getVel() * time
 
-        print("Total distance traveled in meters (rounded to 10 significant digits): " + str(round(dista,10)))
+        #print("Total distance traveled in meters (rounded to 10 significant digits): " + str(round(dista,10)))
 
-        cir = pi * (self.dist * 2)
+        #cir = pi * (self.dist * 2)
         
-        print("Length of orbit rounded to 10 sigdigits: " + str(round(cir, 10)))
+        #print("Length of orbit rounded to 10 sigdigits: " + str(round(cir, 10)))
+    
 
 
     def getRadiansOrbit(self,time):
@@ -166,6 +167,15 @@ class orbitor:
         cir = pi * (self.dist * 2)
         
         return round(cir, 10)
+
+    def statPrinto(self,time):
+        print("Raw Radians, including full revolutions: " + str(round(self.getFullRadians(time), 10)))
+        print("Radians simplified and rounded to 10 significant digits: " + str(round(self.getRadiansOrbit(time),10)))
+        print("Percentage of orbit completed rounded to 1 significant digit: " + str(round(self.getPercentage(time),1)))
+        print("Degrees rounded to 10 significant digits: " + str(round(self.getDegrees(time), 10)))
+        print("Total distance traveled in meters (rounded to 10 significant digits): " + str(round(self.getDistance(time),10)))
+        print("Length of orbit rounded to 10 sigdigits: " + str(round(self.orbitLen(), 10)))
+
 
     
 
