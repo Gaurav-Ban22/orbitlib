@@ -4,7 +4,7 @@ import Anchor as a
 import os
 
 
-class orbitor:
+class Orbitor:
 
     def __init__(self, mass, dist, anchor):
         if not type(anchor) == a.Anch:
