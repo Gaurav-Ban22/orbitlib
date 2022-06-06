@@ -15,3 +15,5 @@ Notes: All distances should be in meters, all masses should be in kilograms, and
 
 It is also tested and true; upon putting in the information about the Earth-Sun orbital system (which is so close to being circular that its orbit can be considered circular) all info given back was accurate (radian values deviated by 0.009.)
 
+Copyright © 2022 Gaurav-Ban22
+
